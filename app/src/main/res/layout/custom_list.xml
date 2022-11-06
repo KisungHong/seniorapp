@@ -5,6 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
+<!--    배경색은 일단 명확한 시각적 구분을 위해 red로 해둠-->
+
     <ImageView
         android:id="@+id/background_product"
         android:layout_width="350dp"
