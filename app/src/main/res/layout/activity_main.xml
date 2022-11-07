@@ -26,6 +26,7 @@
          android:layout_gravity="bottom"
          android:textSize="50sp"
          />
+         />
 
     </FrameLayout>
 
