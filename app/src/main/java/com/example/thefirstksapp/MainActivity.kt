@@ -72,11 +72,11 @@ class MainActivity : AppCompatActivity() {
 
 
         datas.apply {
-            add(ProductData(name = "mary", price = 24))
-            add(ProductData(name = "jenny", price = 26))
-            add(ProductData(name = "jhon", price = 27))
-            add(ProductData(name = "ruby", price = 21))
-            add(ProductData(name = "yuna", price = 23))
+            add(ProductData(product = R.drawable.ic_mainlogo , name = "mary", price = 24, logo = R.drawable.ic_mainlogo))
+            add(ProductData(product = R.drawable.ic_mainlogo , name = "mary", price = 24, logo = R.drawable.ic_mainlogo))
+            add(ProductData(product = R.drawable.ic_mainlogo , name = "mary", price = 24, logo = R.drawable.ic_mainlogo))
+            add(ProductData(product = R.drawable.ic_mainlogo , name = "mary", price = 24, logo = R.drawable.ic_mainlogo))
+            add(ProductData(product = R.drawable.ic_mainlogo , name = "mary", price = 24, logo = R.drawable.ic_mainlogo))
 
             //data_이미지데이터를 add해주어야 함
 
