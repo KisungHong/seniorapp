@@ -1,12 +1,14 @@
 package com.example.thefirstksapp
 
+import android.graphics.drawable.Drawable
 import android.widget.ImageView
 
 data class ProductData(
-    val product : Int,
+
+    val img : Int,
     val name : String,
-    val price : Int,
-    val logo : Int
+    val price : String
+
 
 )
 

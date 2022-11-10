@@ -25,16 +25,16 @@ class MainActivity : AppCompatActivity() {
     private val fragmentTwo by lazy { PopularFragment() }
     private val fragmentThree by lazy { SearchFragment() }
 
-    lateinit var homeAdapter: FirstRankListAdapter
-    private val datas = mutableListOf<ProductData>()
-
+//    lateinit var homeAdapter: FirstRankListAdapter
+//    private val datas = mutableListOf<ProductData>()
+//
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         initNavigationBar()
-        initRecycler()
+
 
     }
 
@@ -66,25 +66,5 @@ class MainActivity : AppCompatActivity() {
             .commit()
     }
 
-    private fun initRecycler() {
-        homeAdapter = FirstRankListAdapter(this)
-        rv.adapter = homeAdapter
-
-
-        datas.apply {
-            add(ProductData(product = R.drawable.ic_mainlogo , name = "mary", price = 24, logo = R.drawable.ic_mainlogo))
-            add(ProductData(product = R.drawable.ic_mainlogo , name = "mary", price = 24, logo = R.drawable.ic_mainlogo))
-            add(ProductData(product = R.drawable.ic_mainlogo , name = "mary", price = 24, logo = R.drawable.ic_mainlogo))
-            add(ProductData(product = R.drawable.ic_mainlogo , name = "mary", price = 24, logo = R.drawable.ic_mainlogo))
-            add(ProductData(product = R.drawable.ic_mainlogo , name = "mary", price = 24, logo = R.drawable.ic_mainlogo))
-
-            //data_이미지데이터를 add해주어야 함
-
-            homeAdapter.datas = datas
-            homeAdapter.notifyDataSetChanged()
-
-        }
-
-    }
 
 }

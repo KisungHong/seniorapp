@@ -1,44 +1,45 @@
 package com.example.thefirstksapp
 
-import android.content.Context
+import android.graphics.Rect
+import android.security.identity.AccessControlProfile
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.thefirstksapp.ProductData
 
-    class FirstRankListAdapter(private val context: Context) : RecyclerView.Adapter<FirstRankListAdapter.ViewHolder>() {
+class FirstRankListAdapter(private val customList: ArrayList<ProductData>) : RecyclerView.Adapter<FirstRankListAdapter.ViewHolder>() {
 
-        var datas = mutableListOf<ProductData>()
-        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-            val view = LayoutInflater.from(context).inflate(R.layout.custom_list,parent,false)
-            return ViewHolder(view)
-        }
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.custom_list, parent, false)
 
-        override fun getItemCount(): Int = datas.size
+        return ViewHolder(itemView)
+    }
 
-        override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-            holder.bind(datas[position])
-        }
-
-        inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-
-            private val imgProduct: ImageView = itemView.findViewById(R.id.main_product)
-            private val txtProductName: TextView = itemView.findViewById(R.id.main_productname)
-            private val imgLogo: ImageView = itemView.findViewById(R.id.main_homelogo)
-            private val txtPrice: TextView = itemView.findViewById(R.id.main_price)
-
-            fun bind(item: ProductData) {
-                imgProduct //여기를 해결해야함,,
-                txtProductName.text = item.name
-                imgLogo // 여기를 해결해야함,,
-                txtPrice.text = item.price.toString()
-
-                // ProductData 에 이미지를 저장하는 방법에 대해 찾아봐야함,,,
-
-            }
-        }
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val currentItem = customList[position] // 나는 이걸 datas라고 명명했고, 세가지 override가 나오기 전에 선언했다. 근데 영진님은 onBindViewHolder 안에 선언했다.
+        holder.imgMain.setImageResource(currentItem.img)
+        holder.txtName.text = currentItem.name
+        holder.txtPrice.text = currentItem.price
 
 
     }
+
+    override fun getItemCount(): Int { // 여긴 똑같다. 다만 나는 약식을 사용
+        return customList.size
+    }
+
+
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+
+        val imgMain: ImageView = itemView.findViewById(R.id.main_product)
+        val txtName: TextView = itemView.findViewById(R.id.main_productname)
+        val txtPrice: TextView = itemView.findViewById(R.id.main_price)
+
+        }
+
+    }
+
+
