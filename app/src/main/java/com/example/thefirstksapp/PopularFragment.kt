@@ -29,16 +29,13 @@ class PopularFragment : Fragment()  {
 
         val view = inflater.inflate(R.layout.fragment_popular, container, false)
 
-        //toolbar 세팅
         toolbar = view.findViewById(R.id.toolbar)
         toolbar_title = toolbar.findViewById(R.id.toolbar_title)
-        toolbar.setNavigationIcon(R.drawable.ic_baseline_dehaze_24) //toolbar의 왼쪽 메뉴 아이콘 버튼
+        toolbar.setNavigationIcon(R.drawable.ic_baseline_dehaze_24)
         toolbar.setNavigationOnClickListener {
             drawerLayout.openDrawer(GravityCompat.START)
         }
 
-
-        //drawer 세팅
         drawerLayout = view.findViewById(R.id.drawer_layout)
         drawerNavigationView = drawerLayout.findViewById(R.id.nav_view)
         drawerNavigationView.setNavigationItemSelectedListener {
@@ -52,7 +49,6 @@ class PopularFragment : Fragment()  {
             true
         }
 
-        //ranking list 세팅
         getRankingList()
         val layoutManager = LinearLayoutManager(context)
         recyclerView = view.findViewById(R.id.ranking_recycler_view)
