@@ -10,7 +10,6 @@
     <ImageView
         android:layout_width="200dp"
         android:layout_height="150dp"
-        android:layout_gravity="center"
         android:src="@drawable/ic_mainlogo" />
 
     <LinearLayout
@@ -21,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="슬로건"
-            android:textAlignment="center"
+            android:gravity ="center"
             android:textColor="#0068FF"
             android:fontFamily="sans-serif-medium"
             android:textSize="35sp" />

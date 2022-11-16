@@ -4,7 +4,8 @@ import android.os.Bundle
 import android.view.*
 import android.widget.TextView
 import android.widget.Toast
-import android.widget.Toolbar
+//import android.widget.Toolbar
+import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
@@ -42,8 +43,8 @@ class PopularFragment : Fragment()  {
 
             when(it.itemId) {
                 R.id.menu_item1 -> reloadFragment("롯데홈쇼핑")
-                R.id.menu_item2 -> reloadFragment("현대홈쇼핑")
-                R.id.menu_item3 -> reloadFragment("NH홈쇼핑")
+                R.id.menu_item2 -> reloadFragment("우리홈쇼핑")
+                R.id.menu_item3 -> reloadFragment("GS홈쇼핑")
             }
             drawerLayout.closeDrawer(GravityCompat.START)
             true
