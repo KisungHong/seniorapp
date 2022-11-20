@@ -3,4 +3,33 @@
     <string name="btn_1">인기상품</string>
     <string name="btn_2">홈</string>
     <string name="btn_3">검색</string>
+
+
+    <string name="ranking_text">인기상품 페이지</string>
+    <string name="home_text">홈 페이지</string>
+    <string name="search_text">검색 페이지</string>
+    <string name="launch_screen_slogan">슬로건</string>
+
+
+    <!-- Ranking name -->
+    <string name="name_1">종근당건강 락토핏 코어맥스 10통 + 30포</string>
+    <string name="name_2">내셔널지오그래픽 인기 BEST 뽀글이/다운/캐리어 단독특가!</string>
+    <string name="name_3">단 하루 5% 할인! 내 몸의 비타민 충전 오쏘몰</string>
+
+
+    <!-- Ranking price  -->
+    <string name="price_1">13,000원</string>
+    <string name="price_2">20,000원</string>
+    <string name="price_3">30,000원</string>
+
+
+    <!-- HomeShopping name -->
+    <string name="shopping_1">롯데홈쇼핑</string>
+    <string name="shopping_2">현대홈쇼핑</string>
+    <string name="shopping_3">NH홈쇼핑</string>
+    <string name="shopping_4">우리홈쇼핑</string>
+
+
+    <!-- Ranking Drawer -->
+    <string name="ranking_drawer_header_title">홈쇼핑선택</string>
 </resources>

@@ -13,6 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Thefirstksapp"
         tools:targetApi="31">
+
         <activity
             android:name=".MainActivity"
             android:theme="@style/Theme.Design.Light.NoActionBar"

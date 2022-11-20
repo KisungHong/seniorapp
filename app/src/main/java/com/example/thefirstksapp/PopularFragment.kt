@@ -57,13 +57,14 @@ class PopularFragment : Fragment()  {
         recyclerView.setHasFixedSize(true)
         adapter = FirstRankListAdapter(rankingArrayList)
         recyclerView.adapter = adapter
+        recyclerView.addItemDecoration(HomeFragmentDeco())
 
 
         return view
     }
 
 
-    private fun getRankingList(){
+    fun getRankingList(){
 
         rankingArrayList = arrayListOf(
             ProductData(img = R.drawable.ic_baseline_home_24, name = "이름1", price = "15,000원"),
