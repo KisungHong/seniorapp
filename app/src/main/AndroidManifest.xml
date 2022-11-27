@@ -27,7 +27,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".Splash_activity"
+            android:name=".splash_activity"
             android:exported="true"
             android:theme="@style/Theme.Design.Light.NoActionBar" >
 
