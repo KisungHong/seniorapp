@@ -36,3 +36,4 @@ class SearchAdapter(private val searchList: ArrayList<SearchData>) : RecyclerVie
     }
 
 }
+

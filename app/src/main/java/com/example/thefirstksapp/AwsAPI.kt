@@ -12,3 +12,4 @@ interface AwsAPI {
     ): Call<List<RankingData>>
 
 }
+

@@ -44,3 +44,4 @@ class RankAdapter(private val rankList: ArrayList<RankingData>) : RecyclerView.A
     }
 
 
+

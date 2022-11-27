@@ -27,3 +27,4 @@ class FragmentDeco : RecyclerView.ItemDecoration() {
         }
     }
 }
+

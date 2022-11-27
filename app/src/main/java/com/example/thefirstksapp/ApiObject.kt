@@ -15,3 +15,4 @@ object ApiObject {
 
     val getProductInfo : AwsAPI by lazy { getRetrofit.create(AwsAPI::class.java) }
 }
+
