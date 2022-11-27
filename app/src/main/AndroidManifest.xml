@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.thefirstksapp">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -16,10 +18,16 @@
 
         <activity
             android:name=".MainActivity"
+            android:exported="false"
             android:theme="@style/Theme.Design.Light.NoActionBar"
-            android:exported="false" />
+            android:windowSoftInputMode="adjustPan">
+
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
-            android:name=".splash_activity"
+            android:name=".Splash_activity"
             android:exported="true"
             android:theme="@style/Theme.Design.Light.NoActionBar" >
 
@@ -28,6 +36,9 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
         </activity>
     </application>
 

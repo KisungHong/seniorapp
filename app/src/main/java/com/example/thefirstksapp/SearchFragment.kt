@@ -1,131 +1,108 @@
 package com.example.thefirstksapp
 
-import android.app.SearchManager
-import android.content.Context
-import android.content.Context.SEARCH_SERVICE
-import android.os.Binder
-import android.os.Build.VERSION_CODES.P
+import android.annotation.SuppressLint
 import android.os.Bundle
+import android.util.Log
 import android.view.*
-import android.widget.ArrayAdapter
-import android.widget.Toast
-import android.widget.Toast.makeText
+import android.widget.*
 import androidx.appcompat.widget.SearchView
-import androidx.core.content.ContextCompat.getSystemService
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.thefirstksapp.databinding.FragmentSearchBinding
 
-private var _binding: FragmentSearchBinding? = null
-private val binding get() = _binding!!
 
-class SearchFragment : Fragment(){
+
+class SearchFragment : Fragment() {
+
     private lateinit var searchView: SearchView
 
+    private lateinit var adapter: SearchAdapter
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var searchArrayList: ArrayList<SearchData>
+    private lateinit var searchResultArrayList: ArrayList<SearchData>
 
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
+        inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentSearchBinding.inflate(inflater, container, false)
-        return binding.root
 
-        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-            override fun onQueryTextSubmit(query: String?): Boolean {
+        val view = inflater.inflate(R.layout.fragment_search, container, false)
 
-                // 검색 버튼 누를 때 호출
+        getSearchList()
+        getSearchResultList()
 
-                return true
+        val layoutManager = LinearLayoutManager(context)
+        recyclerView = view.findViewById(R.id.search_recyclerView)
+        recyclerView.layoutManager = layoutManager
+        recyclerView.setHasFixedSize(true)
+        adapter = SearchAdapter(searchResultArrayList)
+        recyclerView.adapter = adapter
 
+        val searchViewTextListener: SearchView.OnQueryTextListener =
+            object : SearchView.OnQueryTextListener {
+                //검색버튼 입력시 호출, 검색버튼이 없으므로 사용하지 않음
+                override fun onQueryTextSubmit(qString: String): Boolean {
+                    return false
+                }
 
-//                Toast.makeText(this@SearchFragment, "토스트 메세지 띄우기 입니다.", Toast.LENGTH_SHORT)
-//                    .show()
+                //텍스트 입력/수정시에 호출
+                @SuppressLint("NotifyDataSetChanged")
+                override fun onQueryTextChange(qString: String): Boolean {
+
+                    searchResultArrayList.clear()
+
+                    if (qString.isNotEmpty()){
+
+                        searchArrayList.forEach{
+                            if(it.title.contains(qString)){
+
+                                searchResultArrayList.add(it)
+
+                                val tag = "onQueryTextChange : "
+                                Log.d(tag, it.toString())
+
+                            }
+                        }
+                    }
+
+                    recyclerView.adapter!!.notifyDataSetChanged()
+
+                    return false
+                }
             }
 
-            override fun onQueryTextChange(newText: String?): Boolean {
+        searchView = view.findViewById(R.id.searchView)
+        searchView.setOnClickListener{
 
-                // 검색창에서 글자가 변경이 일어날 때마다 호출
-
-                return true
-            }
-        })
+            searchView.isIconified = false
 
 
+        }
+        searchView.setOnQueryTextListener(searchViewTextListener)
 
 
-    }
-
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
-
-
+        // Inflate the layout for this fragment
+        return view
 
     }
 
+    private fun getSearchList(){
 
+        searchArrayList = arrayListOf(
+            SearchData(title = getString(R.string.search_name_1), price = getString(R.string.search_price_1)),
+            SearchData(title = getString(R.string.search_name_2), price = getString(R.string.search_price_2)),
+            SearchData(title = getString(R.string.search_name_3), price = getString(R.string.search_price_3)),
+            SearchData(title = getString(R.string.search_name_4), price = getString(R.string.search_price_4)),
+            SearchData(title = getString(R.string.search_name_5), price = getString(R.string.search_price_5)),
+            SearchData(title = getString(R.string.search_name_6), price = getString(R.string.search_price_6))
+        )
 
+    }
 
+    private fun getSearchResultList(){
 
+        searchResultArrayList = arrayListOf()
 
+    }
 
-
-
-//
-//
-//
-//            val menuItem = menu?.findItem(R.id.menu3)
-//
-//            val searchView = menuItem?.actionView as SearchView
-//
-//
-//
-//            searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
-//
-//                override fun onQueryTextChange(newText: String?): Boolean {
-//
-//                    //검색어 입력 순간마다의 이벤트...
-//
-//                    return true
-//
-//                }
-//
-//
-//
-//                override fun onQueryTextSubmit(query: String?): Boolean {
-//
-//                    //키보드에서 검색 버튼을 누르는 순간의 이벤트
-//
-//                    Toast.makeText(this@MainActivity,"$query",Toast.LENGTH_SHORT).show()
-//
-//                    searchView.setQuery("", false)
-//
-//                    searchView.isIconified = true
-//
-//                    return true
-//
-//                }
-//
-//            })
-//
-//
-//
-//            return super.onCreateOptionsMenu(menu)
-//
-//        }
-//
-//
-//    }
-//
-
-
-
-//class SearchFragment : Fragment(){
-//    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-//        return inflater.inflate(R.layout.fragment_search, container, false)
-
-
+}

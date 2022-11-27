@@ -6,7 +6,8 @@
     android:background="#D6D6D6"
     android:gravity="center"
     android:orientation="vertical"
-    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+    android:theme="@style/ThemeOverlay.AppCompat.Dark"
+    >
 
     <TextView
         android:id="@+id/text"

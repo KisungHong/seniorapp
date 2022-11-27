@@ -5,22 +5,23 @@
     <string name="btn_3">검색</string>
 
 
+<!--    초기 setting 시 pagenation 위해 사용-->
     <string name="ranking_text">인기상품 페이지</string>
     <string name="home_text">홈 페이지</string>
     <string name="search_text">검색 페이지</string>
     <string name="launch_screen_slogan">슬로건</string>
 
 
-    <!-- Ranking name -->
-    <string name="name_1">종근당건강 락토핏 코어맥스 10통 + 30포</string>
-    <string name="name_2">내셔널지오그래픽 인기 BEST 뽀글이/다운/캐리어 단독특가!</string>
-    <string name="name_3">단 하루 5% 할인! 내 몸의 비타민 충전 오쏘몰</string>
+    <!-- View_Home name -->
+    <string name="title_1">[LG전자] DIOS 김치톡톡 김치냉장고 K227S121 (뚜껑식/퓨어)</string>
+    <string name="title_2">New 다이슨 에어랩™ 멀티 스타일러 컴플리트 롱(니켈/코퍼)</string>
+    <string name="title_3">[본사직영][고려은단] 비타민C 1000 600정+쇼핑백 포함</string>
 
 
-    <!-- Ranking price  -->
-    <string name="price_1">13,000원</string>
-    <string name="price_2">20,000원</string>
-    <string name="price_3">30,000원</string>
+    <!-- View_Home_price  -->
+    <string name="price_1">673,810원</string>
+    <string name="price_2">699,000원</string>
+    <string name="price_3">42,730원</string>
 
 
     <!-- HomeShopping name -->
@@ -32,4 +33,21 @@
 
     <!-- Ranking Drawer -->
     <string name="ranking_drawer_header_title">홈쇼핑선택</string>
+
+<!--    Search Data_title-->
+    <string name="search_name_1">[LG전자] DIOS 김치톡톡 김치냉장고 K227S121 (뚜껑식/퓨어)</string>
+    <string name="search_name_2">New 다이슨 에어랩™ 멀티 스타일러 컴플리트 롱(니켈/코퍼)</string>
+    <string name="search_name_3">[본사직영][고려은단] 비타민C 1000 600정+쇼핑백 포함</string>
+    <string name="search_name_4">[빠른배송/설치] 삼성 비스포크 냉장고 4도어 프리스탠딩 RF85B911135 (875 ℓ) 글램 화이트</string>
+    <string name="search_name_5">내셔널지오그래픽 캐리어세트 NG N6501P8 28형 20형 여행용 캐리어 세트</string>
+    <string name="search_name_6">베어파우(BEARPAW) RORIA 양털슬리퍼 (womens) 6종택1</string>
+
+
+    Search Data_price
+    <string name="search_price_1">673,810원</string>
+    <string name="search_price_2">699,000원</string>
+    <string name="search_price_3">42,730원</string>
+    <string name="search_price_4">1,722,370원</string>
+    <string name="search_price_5">235,420원</string>
+    <string name="search_price_6">23,780원</string>
 </resources>

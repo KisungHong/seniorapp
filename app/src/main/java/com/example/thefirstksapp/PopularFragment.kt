@@ -1,17 +1,21 @@
 package com.example.thefirstksapp
 
 import android.os.Bundle
+import android.util.Log
 import android.view.*
 import android.widget.TextView
-import android.widget.Toast
-//import android.widget.Toolbar
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
-import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.drawerlayout.widget.DrawerLayout
+
 import com.google.android.material.navigation.NavigationView
+
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class PopularFragment : Fragment()  {
     private lateinit var toolbar: Toolbar
@@ -20,9 +24,9 @@ class PopularFragment : Fragment()  {
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var drawerNavigationView: NavigationView
 
-    private lateinit var adapter: FirstRankListAdapter
+    private lateinit var adapter: RankAdapter
     private lateinit var recyclerView: RecyclerView
-    private lateinit var rankingArrayList: ArrayList<ProductData>
+    private lateinit var rankingList: List<RankingData>
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
 
@@ -55,23 +59,46 @@ class PopularFragment : Fragment()  {
         recyclerView = view.findViewById(R.id.ranking_recycler_view)
         recyclerView.layoutManager = layoutManager
         recyclerView.setHasFixedSize(true)
-        adapter = FirstRankListAdapter(rankingArrayList)
-        recyclerView.adapter = adapter
-        recyclerView.addItemDecoration(HomeFragmentDeco())
-
 
         return view
     }
 
 
-    fun getRankingList(){
+    private fun callProductInfo(){
 
-        rankingArrayList = arrayListOf(
-            ProductData(img = R.drawable.ic_baseline_home_24, name = "이름1", price = "15,000원"),
-            ProductData(img = R.drawable.ic_baseline_home_24, name = "이름2", price = "20,000원"),
-            ProductData(img = R.drawable.ic_baseline_home_24, name = "이름3", price = "25,000원")
-        )
+        val call = ApiObject.getProductInfo.getProductInfoAll(shopName = "lotte")
+        call.enqueue(object: Callback<List<RankingData>> {
 
+            override fun onResponse(call: Call<List<RankingData>>, response: Response<List<RankingData>>) {
+                val tag = "OnResponse : "
+                Log.d(tag, "호출 성공함")
+
+                if(response.isSuccessful) {
+                    rankingList = response.body() ?: listOf()
+                    val tag = "ProductData : "
+                    Log.d(tag, rankingList.toString())
+
+                    getRankingList()
+
+
+                }
+            }
+
+            override fun onFailure(call: Call<List<RankingData>>, t: Throwable) {
+
+                val tag = "OnResponse : "
+                Log.d(tag, "실패함")
+            }
+        })
+
+    }
+
+    private fun getRankingList() {
+
+        adapter = RankAdapter(rankingList as ArrayList<RankingData>)
+        recyclerView.adapter = adapter
+        adapter.notifyDataSetChanged()
+        recyclerView.addItemDecoration(FragmentDeco())
     }
 
     private fun reloadFragment(text: String) {

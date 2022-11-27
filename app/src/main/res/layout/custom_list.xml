@@ -9,7 +9,7 @@
 
 
     <ImageView
-        android:id="@+id/main_product"
+        android:id="@+id/home_pimg"
         android:layout_width="350dp"
         android:layout_height="300dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -18,7 +18,7 @@
         tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
     <TextView
-        android:id="@+id/main_productname"
+        android:id="@+id/home_ptitle"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -30,7 +30,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/main_product"
+        app:layout_constraintTop_toBottomOf="@+id/home_pimg"
         app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
@@ -38,19 +38,19 @@
         android:layout_width="110dp"
         android:layout_height="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/main_productname"
-        app:layout_constraintTop_toBottomOf="@+id/main_productname"
+        app:layout_constraintStart_toStartOf="@+id/home_ptitle"
+        app:layout_constraintTop_toBottomOf="@+id/home_ptitle"
         app:srcCompat="@drawable/logo_lotte" />
 
     <TextView
-        android:id="@+id/main_price"
+        android:id="@+id/home_pprice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="163,250 원"
         android:textStyle="bold"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/main_productname"
-        app:layout_constraintTop_toBottomOf="@+id/main_productname" />
+        app:layout_constraintEnd_toEndOf="@+id/home_ptitle"
+        app:layout_constraintTop_toBottomOf="@+id/home_ptitle" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
