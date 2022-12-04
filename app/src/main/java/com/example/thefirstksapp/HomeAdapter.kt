@@ -13,7 +13,7 @@ import com.example.thefirstksapp.ProductData
 class HomeAdapter(private val homeList: List<ProductData>) : RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.ranking_list_item, parent, false)
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.custom_list, parent, false)
 
         return ViewHolder(itemView)
     }

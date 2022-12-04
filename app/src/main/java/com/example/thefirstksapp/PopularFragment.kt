@@ -32,6 +32,8 @@ class PopularFragment : Fragment()  {
 
     ): View? {
 
+        callProductInfo()
+
         val view = inflater.inflate(R.layout.fragment_popular, container, false)
 
         toolbar = view.findViewById(R.id.toolbar)
@@ -54,7 +56,7 @@ class PopularFragment : Fragment()  {
             true
         }
 
-        getRankingList()
+
         val layoutManager = LinearLayoutManager(context)
         recyclerView = view.findViewById(R.id.ranking_recycler_view)
         recyclerView.layoutManager = layoutManager
@@ -95,7 +97,7 @@ class PopularFragment : Fragment()  {
 
     private fun getRankingList() {
 
-        adapter = RankAdapter(rankingList as ArrayList<RankingData>)
+        adapter = RankAdapter(rankingList)
         recyclerView.adapter = adapter
         adapter.notifyDataSetChanged()
         recyclerView.addItemDecoration(FragmentDeco())

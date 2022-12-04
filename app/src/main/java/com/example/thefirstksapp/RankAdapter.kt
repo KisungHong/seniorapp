@@ -9,9 +9,9 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
-class RankAdapter(private val rankList: ArrayList<RankingData>) : RecyclerView.Adapter<RankAdapter.ViewHolder>() {
+class RankAdapter(private val rankList: List<RankingData>) : RecyclerView.Adapter<RankAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.custom_list, parent, false)
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.ranking_list_item, parent, false)
 
         return ViewHolder(itemView)
     }
