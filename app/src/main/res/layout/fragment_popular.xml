@@ -15,6 +15,16 @@
         android:layout_height="match_parent"
 
         />
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:menu="@menu/menu_list"
+        app:headerLayout="@layout/header"
+        android:paddingTop="30dp"
+        />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/ranking_recycler_view"
@@ -30,16 +40,6 @@
         app:layout_constraintTop_toBottomOf="@id/toolbar"
         tools:listitem="@layout/custom_list" />
 
-    <com.google.android.material.navigation.NavigationView
-        android:id="@+id/nav_view"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        android:fitsSystemWindows="true"
-        app:menu="@menu/menu_list"
-        app:headerLayout="@layout/header"
-        android:paddingTop="30dp"
-        />
 
 
 </androidx.drawerlayout.widget.DrawerLayout>

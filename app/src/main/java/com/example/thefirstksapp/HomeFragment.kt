@@ -29,7 +29,7 @@ class HomeFragment : Fragment() {
         initHomeList()
 
         val layoutManager = LinearLayoutManager(context)
-        recyclerView = view.findViewById(R.id.ranking_recycler_view)
+        recyclerView = view.findViewById(R.id.rv_home)
         recyclerView.layoutManager = layoutManager
         recyclerView.setHasFixedSize(true)
         adapter = HomeAdapter(homeList)
